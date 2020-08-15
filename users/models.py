@@ -10,7 +10,9 @@ class User(AbstractUser):
     GENDER_FEMALE = "female"
     GENDER_CHOICES = ((GENDER_MALE, "남자"), (GENDER_FEMALE, "여자"))
 
-    avatar = models.ImageField(null=True)
-    gender = models.CharField(choices=GENDER_CHOICES, null=True)
-    bio = models.TextField(default="")
-
+    avatar = models.ImageField(null=True, blank=True)
+    gender = models.CharField(
+        choices=GENDER_CHOICES, max_length=10, null=True, blank=True
+    )
+    bio = models.TextField(default="", blank=True)
+    birthdate = models.DateField(null=True)

@@ -124,4 +124,4 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_ROOT = BASE_DIR / "uploads"
 MEDIA_URL = "/media/"
 
-# AUTH_USER_MODEL = os.environ.get("USER_AUTH_MODEL")
+AUTH_USER_MODEL = os.environ.get("USER_AUTH_MODEL")
