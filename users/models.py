@@ -6,4 +6,11 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
 
-    pass
+    GENDER_MALE = "male"
+    GENDER_FEMALE = "female"
+    GENDER_CHOICES = ((GENDER_MALE, "남자"), (GENDER_FEMALE, "여자"))
+
+    avatar = models.ImageField(null=True)
+    gender = models.CharField(choices=GENDER_CHOICES, null=True)
+    bio = models.TextField(default="")
+
